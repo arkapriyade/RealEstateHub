@@ -1,0 +1,320 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Real Estate Hub</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<style type="text/css">
+	.auto-style2 {
+		font-size: large;
+		color:white
+	}
+	.auto-style4 {
+	cursor: pointer;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 34px;
+	font-family: Oswald;
+	text-decoration: none;
+	text-transform: uppercase;
+	display: block;
+	height: 34px;
+	width: 109px;
+	background: url('images/buttons.png') no-repeat 0 0;
+}
+	.auto-style5 {
+		color: #FFFFFF;
+	}
+	.auto-style6 {
+		color: #000000;
+	}
+	.auto-style7 {
+		color: #FFFF00;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: small;
+		font-style: italic;
+	}
+	.auto-style8 {
+		margin-top: 0px;
+	}
+	.auto-style9 {
+		text-align: center;
+		}
+	.auto-style10 {
+		margin-bottom: 2px;
+	}
+	.auto-style11 {
+		margin-bottom: 3px;
+	}
+/* The container <div> - needed to position the dropdown content */
+ .dropdown   {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+ .dropdown-content  {
+  display: none;
+  position: absolute;
+  background-color: maroon;
+  min-width: 160px;
+  min-hight: 1px;
+  z-index: 1;
+ line-height: 30px;
+
+}
+
+/* Links inside the dropdown */
+  .dropdown-content a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  text-align:center;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color:#211917 ;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
+
+				<script type="text/javascript">
+					function validation(){
+					  	var user=document.getElementById('user').value;
+						var pass=document.getElementById('pass').value;
+						document.getElementById('username').innerHTML="";
+						document.getElementById('password').innerHTML="";
+						
+						if(user==""){
+						    document.getElementById('username').innerHTML=" ** Please fill the username field";
+						}
+						else if(user.indexOf('@')<=0){
+						document.getElementById('username').innerHTML=" **  @   Invalid position";
+
+						}
+						else if(user.charAt(user.length-4)!='.' && user.charAt(user.length-4)!='.'){
+							document.getElementById('username').innerHTML=" **  .   Invalid position";
+						}
+					else if(pass==""){
+						document.getElementById('password').innerHTML="  ** Please fill the password field";
+					}
+					else if ((pass.length<=5) ||(pass.length>20)){
+						document.getElementById('password').innerHTML="  ** password length must be between 5 and 20";
+					}
+					else{
+					open("gallery.html","_self")
+					}
+					return false;
+				}
+
+				</script>
+	<link rel="shortcut icon" href="images/icon.png" type="image/vnd.microsoft.icon"/>	
+</head>
+<body>
+	<div id="header">
+		<div>
+			<div id="logo">
+				<a href="index.html"><img src="images/logo.png" alt="LOGO"></a>
+			</div>
+			<ul id="navigation">
+				<li class="selected">
+					<a href="index.html">Home</a>
+				</li>
+				<li>
+					<a href="Upload.html">Upload</a>
+				</li>
+				<li>
+					<a href="gallery.html">Gallery</a>
+				</li>
+				<li>
+				        <div class="dropdown">
+						 <a href="View.html">View</a>
+                         <div class="dropdown-content">
+                         <a href="property _view2.html">Sukhobrishti</a>
+                         <a href="property _view3.html">Swarna Group</a>
+
+                         
+                      </div>
+                      </div>
+				</li>
+				<li>
+					<a href="Report.html">Report</a>
+				</li>
+			</ul>
+			
+		</div>
+	<strong> <marquee class="auto-style2">Welcome to The Realestate Hub - Find your Dream Property Here</marquee></strong>
+	</div>
+	<div id="contents">
+		<div>
+			<div class="body">
+			<video id="bgVideo" autoplay loop muted>   
+					       	<source src="./images/home.mp4" type="video/mp4">
+    				 </video>
+				<div id="adbox">
+					&nbsp;
+					<div class="login" style="left: 0px; right: 0px; top: 0; height: 370px; width: 842px;">
+					<div style="width: 300px; background: rgba(200, 54, 54, .5); height: 365px; position: absolute; padding: 4px 45px;">
+					  <h1>Login Here</h1>
+					  <form method="GET" style="width: 391px" name="myForm" onsubmit="return validation()">
+						<h2 style="width: 186px" class="auto-style10">&nbsp;User Name </h2>
+						  <input name="Text1" style="width: 266px; height: 30px" type="text" id="user" placeholder="Use Your Registered Email id" onchange="return validation()">
+						<br>
+						<span id="username" class="auto-style7"></span>
+						<h2 style="width: 186px" class="auto-style11">&nbsp;Password </h2><input name="Password1" style="width: 266px; height: 30px" type="password" id="pass"  placeholder="Type Your Password Here" onchange="return validation()">
+						<br>
+						<span id="password" class="auto-style7"></span>
+                    	<br>
+                    	<br>
+						<input type="submit" value="Login Here" class="auto-style4" style="height: 40px; width: 113px"> 
+						  <h4 style="width: 398px"><span class="auto-style6">Are you a new user  ? -</span> <b> 
+						  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdSa6Vi1oAFN6KqlwcIB4p-czUQB7OQT4pwxatjJ4ygojklFA/viewform?usp=sf_link">
+						  <span class="auto-style5">Sign Up Here</span></a></b></h4>
+						</form>
+						
+						<div class="details" style="right: -477px; top: 0; height: 373px; width: 355px;  background: rgba(28, 222, 222, .7);">
+						<h1>About US</h1>
+						<p style="height: 40px">
+							You can choose from our large selection of Properties. U can also upload a property in our website & register yourself for new updates from oue website.
+						</p>
+						<h2 class="auto-style9">Web Developers</h2>
+						<div class="details1" style="right: 290px; top: 200px; height: 187px; width: 99px;">
+						<div class="hoverclass" style="height: 130px; width: 130px;" >				
+						<img alt="" src="./images/vishnu.png" height="120" width="120" style="opacity:.9">
+						</div>
+						<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vishnu</strong>
+						</div>
+										
+					<div class="details1" style=" right: -9px; top: 200px; height: 187px; width: 99px;">
+					<div class="hoverclass" style="height: 130px; width: 130px;" >							
+					<img alt="" src="./images/basha.png" height="120" width="120" style="opacity:.9" >
+					</div>
+					<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Muneer</strong>
+					</div>
+					
+					<div class="details1" style=" right: 138px; top: 200px; height: 187px; width: 99px;">	
+					<div class="hoverclass" style="height: 130px; width: 130px;" >	
+							<img alt="" src="./images/Arka.png" height="120" width="120" style="opacity:.9" class="auto-style8">
+					        </div>
+					        <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arkapriya</strong>
+					        </div>
+					</div>
+
+						</div>
+						</div>
+						
+				</div>
+				<strong>
+				<marquee>These are our featured Properties</marquee></strong>
+				
+				<ul id="featured">
+					<li>
+						<div>
+							<img src="images/flats.jpg" alt="Img"> <a href="index.html"></a>
+						</div>
+						<div class="details">
+							<h4>Flats</h4>
+							<p>
+								There are 50k+&nbsp; Flats&nbsp; in our&nbsp; 
+								websites&nbsp; . You&nbsp; can&nbsp; book&nbsp;&nbsp; 
+								flats&nbsp;&nbsp; through&nbsp;&nbsp; our&nbsp; 
+								website.</p>
+						</div>
+					</li>
+					<li class="bedroom">
+						<div>
+							<img src="images/housing.jpg" alt="Img"> <a href="index.html"></a>
+						</div>
+						<div class="details">
+							<h4>Housing Complex</h4>
+							<p>There are 20k+&nbsp; Flats&nbsp; in our&nbsp; 
+								websites&nbsp; . You&nbsp; can&nbsp; book&nbsp;&nbsp; 
+								flats in complex&nbsp; through&nbsp;&nbsp; our&nbsp; 
+								website.</p>
+						</div>
+					</li>
+					<li class="kitchen">
+						<div>
+							<img src="images/bungalow.jpg" alt="Img"> <a href="index.html"></a>
+						</div>
+						<div class="details">
+							<h4>Bunglow</h4>
+							<p>
+								There are 10k+&nbsp; Flats&nbsp; in our&nbsp; 
+								websites&nbsp; . You&nbsp; can&nbsp; book&nbsp;&nbsp; 
+								bunglow&nbsp;&nbsp; through&nbsp;&nbsp; our&nbsp; 
+								website.
+							</p>
+
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<div>
+			<div id="links">
+				<div class="showroom">
+					<h4>Visit our Website</h4>
+					<a href="gallery.html">
+					<iframe allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/pvDlRTq110g" style="width: 288px; height: 141px"></iframe>
+					</a>&nbsp;<h4>Want to contact us?</h4>
+					<p class="auto-style5"style="width: 282px; height: 69px">
+						Gmail id=dearkapriya01@gmail.com</br>
+						contact details:91 8348117410</br>
+						Masage us:91 9674155649
+
+					</p>
+				</div>
+				<div>
+					<h4>Recent UPDATES</h4>
+					<ul class="posts">
+						<li>
+							<span class="time">Apr 16</span>
+							<p>
+								New property is available in Delhi
+							</p>
+						</li>
+						<li>
+							<span class="time">Apr 15</span>
+							<p>
+								New projects are created in Gurgaon
+							</p>
+						</li>
+
+						<li>
+							<span class="time">Apr 14</span>
+							<p>
+								There are new properties available in our website
+							</p>
+
+						</li>
+					</ul>
+				</div>
+				<div>
+				<div>
+					<form method="get" id="newsletter" action="https://docs.google.com/forms/d/e/1FAIpQLSfywGdFGOw1z6yWzy2LDXKJIYNE-ruEBnaOO4_4m25i1pEedg/viewform">
+						<h4>For NEW UPDATES REGISTER HERE</h4>
+						<input type="text" value="Enter Email Address Here For Updates" >
+						 <input type="submit" value="Sign up" class="btn2">
+					</form>
+				</div>
+					<div id="connect">
+						<h4>Social Media</h4>
+						<a href="https://www.facebook.com/arkapriya.de" target="_blank" class="facebook"></a> <a href="https://www.google.com/gmail/" target="_blank" class="googleplus"></a> <a href="https://twitter.com/ArkapriyaDe" target="_blank" class="twitter"></a>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	</body>
+</html>

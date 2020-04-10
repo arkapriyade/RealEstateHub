@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Real Estate Hub</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<style type="text/css">
+	/* Dropdown Content (Hidden by Default) */
+ .dropdown-content  {
+  display: none;
+  position: absolute;
+  background-color: maroon;
+  min-width: 160px;
+  min-hight: 1px;
+  z-index: 1;
+ line-height: 30px;
+
+}
+
+/* Links inside the dropdown */
+  .dropdown-content a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  text-align:center;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color:#211917 ;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+</style>
+
+
+	</head>
+<body>
+	<div id="header">
+		<div>
+			<div id="logo">
+				<a href="index.html"><img src="images/logo.png" alt="LOGO"></a>
+			</div>
+		<ul id="navigation">
+			<li >
+					<a href="index.html">Home</a>
+				</li>
+				<li>
+					<a href="Upload.html">Upload</a>
+				</li>
+				<li class="selected">
+					<a href="gallery.html">Gallery</a>
+				</li>
+					<li>
+				        <div class="dropdown">
+						 <a href="View.html">View</a>
+                         <div class="dropdown-content">
+                         <a href="property _view2.html">Sukhobrishti</a>
+                         <a href="property _view3.html">Swarna Group</a>
+                         
+                      </div>
+                      </div>
+			</li>
+
+				<li>
+					<a href="Report.html">Report</a>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+	<div id="contents">	
+		<div>
+			<div class="body"  id="gallery">
+			<video id="bgVideo" autoplay loop muted>   
+					       	<source src="./images/home.mp4" type="video/mp4">
+    				 </video>
+
+				<ul class="tabs">
+					<li class="selected">
+						<a href="https://housing.com/">Buy</a>
+					</li>
+					<li class="selected">
+						<a href="https://www.magicbricks.com/">Sell</a>
+					</li>
+					</ul>
+				<h1>Properties</h1>
+				<ul class="items">
+					<li>
+						<div class="frame">
+							<a href="View.html">
+							<img src="images/bungalow.gif" alt="Img" height="262" width="417"></a>
+						</div>
+						<h5><a href="View.html">GM Group</a></h5>
+						<span class="price">Price=60 lakh</span>
+						<p><b>Details:</b>
+							 Kolkata Sodepur</br>
+						     2BHK Flat</br>
+							 Property size=2.09 acres
+							</p>
+						<div class="details">
+							<p>
+							USP: Comfort at a Pocket-friendly Price. </br>
+							Close to the Market & Schools.</br>
+                            Vaastu Compliant.</br>
+                            Home to a Private Terrace Garden, Kids' Area etc.</p>
+							</div>
+					</li>
+					<li>
+						<div class="frame">
+							<a href="property _view2.html">
+							<iframe allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/TlMUknHQYLU?rel=0&amp;autoplay=1&mute=1" style="width: 415px; height: 258px"></iframe>
+					    </a>
+						</div>
+						<h5><a href="property _view2.html">Sukhobrishti</a></h5>
+						<span class="price">Price=1.05 crore</span>
+						<p><b>Details:</b>
+							 Delhi Gurgaon</br>
+						     3BHK Bunglow</br>
+							 Property size=3.09 acres
+							 </p>
+						<div class="details 1">
+							<p>
+							USP: Nice Enviroment. </br>
+							Close to Big Bazar & Busstand. </br>
+                            Vaastu Compliant.</br>
+                            24*7 Water supply & Security Guard.
+                            </p>
+							</div>
+							</li>
+							<li>
+						<div class="frame">
+							<a href="property _view3.html">
+							<img src="images/swarna.jpg" alt="Img"></a>
+						</div>
+						<h5><a href="property _view3.html">Swarna Group</a></h5>
+						<span class="price">Price=2.50 crore</span>
+						<p><b>Details:</b>
+							 Durgapur Jk Market</br>
+						     3BHK Bunglow</br>
+							 Property size=3.09 acres
+							 </p>
+						<div class="details 1">
+							<p>
+							USP: Eco Friendly Design. </br>
+							Free Modular Kitchen.</br>
+                            False Ceiling and Texture Paint.</br>
+                            Large Green Open Spaces.
+                            </p>
+							</div>
+							</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<div>
+			<ul class="navigation">
+			
+				
+				
+			</ul>
+			<div id="links">
+				<div class="showroom">
+					<h4>Visit our Website</h4>
+					<a href="gallery.html">
+					<img src="images/show-room.jpg" height="170" width="305"></a>
+					<h4>Want to contact us?</h4>
+					<p class="auto-style5"style="width: 282px; height: 69px">
+						Gmail id=dearkapriya01@gmail.com</br>
+						contact details:91 8348117410</br>
+						Masage us:91 9674155649
+
+					</p>
+				</div>
+				<div>
+					<h4>Recent UPDATES</h4>
+					<ul class="posts">
+						<li>
+							<span class="time">Apr 16</span>
+							<p>
+								New property is available in Delhi
+							</p>
+						</li>
+						<li>
+							<span class="time">Apr 15</span>
+							<p>
+								New projects are created in Gurgaon
+							</p>
+						</li>
+
+						<li>
+							<span class="time">Apr 14</span>
+							<p>
+									There are new properties available in our website
+							</p>
+
+						</li>
+					</ul>
+				</div>
+				<div>
+				<div>
+					<form method="get" id="newsletter" action="https://docs.google.com/forms/d/e/1FAIpQLSfywGdFGOw1z6yWzy2LDXKJIYNE-ruEBnaOO4_4m25i1pEedg/viewform">
+
+						<h4>For NEW UPDATES REGISTER HERE</h4>
+						<input type="text" value="Enter Email Address Here For Updates" >
+						<input type="submit" value="Sign up" class="btn2">
+					</form>
+
+					<div id="connect">
+						<h4>Social Media</h4>
+						<a href="https://www.facebook.com/arkapriya.de" target="_blank" class="facebook"></a> <a href="https://www.google.com/gmail/" target="_blank" class="googleplus"></a> <a href="https://twitter.com/ArkapriyaDe" target="_blank" class="twitter"></a>
+
+
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</body>
+</html>

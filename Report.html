@@ -1,0 +1,429 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Real Estate Hub</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link href="lib/prism.css" rel="stylesheet" />
+	<style type="text/css">
+	.auto-style2 {
+		font-size: large;
+		color:white
+	}
+	.auto-style4 {
+	cursor: pointer;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 34px;
+	font-family: Oswald;
+	text-decoration: none;
+	text-transform: uppercase;
+	display: block;
+	height: 25px;
+	width: 109px;
+	background: url('images/buttons.png') no-repeat 0 0;
+}
+/* The switch - the box around the slider */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #21ff00;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F0;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2896F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+ .auto-style5 {
+		color: #FFFFFF;
+	}
+	/* Dropdown Content (Hidden by Default) */
+ .dropdown-content  {
+  display: none;
+  position: absolute;
+  background-color: maroon;
+  min-width: 160px;
+  min-hight: 1px;
+  z-index: 1;
+ line-height: 30px;
+
+}
+
+/* Links inside the dropdown */
+  .dropdown-content a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  text-align:center;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color:#211917 ;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+	</style>
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="lib/jquery-1.10.2.min.js"></script>
+    <script src="numscroller-1.0.js"></script>
+    <script src="lib/prism.js"></script>
+
+	<script>
+		window.onload = function() {
+		//alert("dikjksj");
+			var ctx = document.getElementById('myChart').getContext('2d');
+			window.myLine = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+    // The data for our dataset
+    data: {
+        labels: ["Jan","Feb","Mar","April","May", "June", "July", "Aug"],
+        datasets: [{
+            label: 'Page Views',
+            borderColor: 'rgb(255, 130, 132)',
+            backgroundColor: 'rgb(77, 244, 21,.5)',
+            data: ["100","210","130","540","450","1000","780","670"]
+        }]
+    },
+    
+    // Configuration options go here
+options : {
+  scales: {
+    yAxes: [{
+      scaleLabel: {
+        display: true,
+        labelString: '==> VIEWS'
+      }
+    }],
+    xAxes: [{
+      scaleLabel: {
+        display: true,
+        labelString: '==> time'
+      }
+    }]
+
+  }     
+}
+});
+};
+
+var myLinechat;
+var type;
+
+function yearwise() {
+type=1;
+Changechat();
+}
+
+function printDiv() { 
+        window.print();                        
+     } 
+
+function monthwise() {
+type=0;
+Changechat();
+}
+
+var array1 = Array();
+var array2 = Array();
+
+function Changechat() {  
+		var ctx = document.getElementById('myChart').getContext('2d');
+		
+		 if(myLinechat)
+    {
+            myLinechat.destroy();
+    }
+        if (type==0) {
+        array1 = ["Jan","Feb","Mar","April","May", "June", "July", "Aug"];
+        array2 = ["100","210","130","540","450","1000","780","670"];
+        }
+        else{
+        array1 = ["2010","2011","2012","2013","2014", "2015", "2016", "2017"];
+        array2 = ["100","210","130","540","4500","1000","780","670"];
+        }
+        
+		if(document.getElementById('toggle').checked == true){
+		 myLinechat = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+    // The data for our dataset
+    data: {
+        labels: array1 ,
+        datasets: [{
+            label: 'Page Views',
+            borderColor: 'rgb(255, 130, 132)',
+            backgroundColor: 'rgb(77, 244, 21,.5)',
+            data: array2 
+           }]
+    },
+    
+    // Configuration options go here
+options : {
+  scales: {
+    yAxes: [{
+      scaleLabel: {
+        display: true,
+        labelString: '==> VIEWS'
+      }
+    }],
+    xAxes: [{
+      scaleLabel: {
+        display: true,
+        labelString: '==> time'
+      }
+    }]
+
+  }     
+}
+  });
+  }
+ else{
+ 	myLinechat = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'pie',
+    // The data for our dataset
+data: {    
+   datasets: [{
+					data: array2 ,
+					backgroundColor: ["red","green","yellow","blue","orange","Gold","green","Gray"],
+					label: 'Dataset 1'
+				}],
+				labels: array1			
+				},
+	});
+}
+}
+
+</script>
+	
+	<link rel="shortcut icon" href="images/icon.png" type="image/vnd.microsoft.icon"/>	
+</head>
+<body>
+	<div id="header">
+		<div>
+			<div id="logo">
+				<a href="index.html"><img src="images/logo.png" alt="LOGO"></a>
+			</div>
+			<ul id="navigation">
+				<li >
+					<a href="index.html">Home</a>
+				</li>
+				<li>
+					<a href="Upload.html">Upload</a>
+				</li>
+				<li>
+					<a href="gallery.html">Gallery</a>
+				</li>
+					<li>
+				        <div class="dropdown">
+						 <a href="View.html">View</a>
+                         <div class="dropdown-content">
+                        <a href="property _view2.html">Sukhobrishti</a>
+                         <a href="property _view3.html">Swarna Group</a>
+
+                         
+                      </div>
+                      </div>
+				</li>
+
+				<li class="selected">
+					<a href="Report.html">Report</a>
+				</li>
+			</ul>
+		</div>
+	<strong> <marquee class="auto-style2">Welcome to The Realestate Hub - Find your Dream Property Here</marquee></strong>
+	</div>
+	<div id="contents">
+		<div>
+			<div class="body">
+			<video id="bgVideo" autoplay loop muted>   
+					       	<source src="./images/home.mp4" type="video/mp4">
+    				 </video>
+
+					<div class="login" style="padding: 10px; font : normal normal normal xx-large serif; left: 4px; top: 0; height: 830px; background: rgba(255, 255, 255, .8); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: #800000;">
+					<div style="text-align:left">
+                  <input type="submit" onclick="printDiv()" value="PRINT" class="auto-style4" style="height: 35px; width: 113px">
+                   </div>
+
+					<div class="reporthead" style="text-align:center; background: url('images/separator-light.png') repeat-x left bottom; padding: 0px 0 .11px;">
+                    <h1>Page View Statistics</h1>
+                    </div>
+					<div style="text-align:center;">
+					<div style="text-align:center; background: rgba(0, 255, 255, .2); position:absolute; left: 494px; top: 279px; width: 278px;">
+					Today
+					<span class='numscroller' data-min='1' data-max='240' data-delay='100' data-increment='1'>240</span>
+                    </div>
+                    <div style="text-align:center; background: rgba(255, 0, 0, .2); position:absolute; left: 326px; top: 319px; width: 625px;">
+					This Week
+					<span class='numscroller' data-min='1' data-max='2123' data-delay='100' data-increment='1'>2123</span>
+                    </div>
+					<div style="text-align:center; background: rgba(20, 25, 128, .2); position:absolute; left: 205px; top: 359px; width: 860px;">
+					This Month
+					<span class='numscroller' data-min='1' data-max='29320' data-delay='100' data-increment='1'>29320</span>
+                    </div>
+                    <br> 
+                    <br> 
+                    <br> 
+                    <br>
+                    <br> 
+                  
+                  <div style="height: 180px">
+	               <canvas id="myChart"></canvas>
+	                <br> 
+	              </div>
+	              <br> 
+	              <br> 
+	              <br>
+	              <br> 
+	              <br> 
+	              <br> 
+	              <br> 
+					<br> 
+
+ <br> 
+
+	              <div style="text-align:left">
+                  <input type="submit" onclick="monthwise()" value="Month wise" class="auto-style4" style="height: 35px; width: 113px">
+                   </div>
+                   <div style="position:absolute; left: 607px; top: 953px;">
+                  <label class="switch">
+                  <input type="checkbox" id="toggle" onclick="Changechat()" checked="checked">
+                   <span class="slider round"></span>
+                   </label>
+                   </div>
+                   <div style="position:absolute; left: 534px; top: 958px;"><P>PIE CHART</P></div>
+                   <div style="position:absolute; left: 672px; top: 958px;"><P>LINE CHART</P></div>
+                   <div style="position:absolute; left: 975px; top: 955px;">
+                  <input type="submit"  onclick="yearwise()" value="Year wise " class="auto-style4" style="height: 35px; width: 113px">
+                  </div>
+                  
+				</div>
+</div>
+</div>
+</div>
+</div>
+	<div id="footer">
+		<div style="width: 922px">
+			<div id="links">
+				<div class="showroom">
+					<h4>Visit our Website</h4>
+					<a href="gallery.html">
+					<img src="images/show-room.jpg" height="170" width="305"></a>
+					<h4>Want to contact us?</h4>
+					<p class="auto-style5"style="width: 282px; height: 69px">
+						Gmail id=dearkapriya01@gmail.com</br>
+						contact details:91 8348117410</br>
+						Masage us:91 9674155649
+
+					</p>
+				</div>
+				<div>
+					<h4>Recent UPDATES</h4>
+					<ul class="posts">
+						<li>
+							<span class="time">Apr 16</span>
+							<p>
+								New property is available in Delhi
+							</p>
+						</li>
+						<li>
+							<span class="time">Apr 15</span>
+							<p>
+								New projects are created in Gurgaon
+							</p>
+						</li>
+
+						<li>
+							<span class="time">Apr 14</span>
+							<p>
+								There are new properties available in our website
+							</p>
+
+						</li>
+					</ul>
+				</div>
+				<div>
+				<div>
+					<form method="get" id="newsletter" action="https://docs.google.com/forms/d/e/1FAIpQLSfywGdFGOw1z6yWzy2LDXKJIYNE-ruEBnaOO4_4m25i1pEedg/viewform">
+
+						<h4>For NEW UPDATES REGISTER HERE</h4>
+						<input type="text" value="Enter Email Address Here For Updates" >
+						<input type="submit" value="Sign up" class="btn2">
+					</form>
+
+					<div id="connect">
+						<h4>Social Media</h4>
+						<a href="https://www.facebook.com/arkapriya.de" target="_blank" class="facebook"></a> <a href="https://www.google.com/gmail/" target="_blank" class="googleplus"></a> <a href="https://twitter.com/ArkapriyaDe" target="_blank" class="twitter"></a>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
